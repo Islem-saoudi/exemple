@@ -12,4 +12,8 @@ export class UserService {
     const newUser = new this.userModel(createUserDto);
     return newUser.save();
   }
+
+  getsUsers() {
+    return this.userModel.find().populate('posts');
+  }
 }
